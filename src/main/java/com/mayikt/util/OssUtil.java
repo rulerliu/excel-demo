@@ -100,11 +100,11 @@ public class OssUtil {
 	}
 	
 	public static void main(String[] args) {
-		String uploadPath = "myfile2";
+		String uploadPath = "myfile3";
 		File file = new File("D:\\Google Download\\test.png");
 		upload(file, uploadPath);
 		
-		String downloadPath = "myfile2/test.png";
+		String downloadPath = "myfile3/test.png";
 		File download = download(downloadPath);
 		System.out.println(download.getName());
 		

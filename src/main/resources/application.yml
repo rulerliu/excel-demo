@@ -5,3 +5,5 @@ spring:
     view:
       prefix: /WEB-INF/jsp/
       suffix: .jsp
+  application:
+    name: service-order

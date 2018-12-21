@@ -39,8 +39,11 @@ public class ExcelController {
         int size = (int) file.getSize();
         System.out.println(fileName + "-->" + size);
         
-        String path = "F:/test" ;
-        File dest = new File(path + "/" + fileName);
+        // 上传后记录的文件...
+        String dir = System.getProperty("java.io.tmpdir");
+        // 临时文件路径
+        String filePath = dir + File.separator + fileName;
+        File dest = new File(filePath);
         //判断文件父目录是否存在
         if(!dest.getParentFile().exists()){
             dest.getParentFile().mkdir();
