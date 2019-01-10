@@ -250,11 +250,12 @@ public class FtpUtil {
     } 
     
     public static void main(String[] args) {
-    	FtpUtil ftpUtil = new FtpUtil("zhaokun", "zhaokun", "39.107.54.132", 22);
+//    	FtpUtil ftpUtil = new FtpUtil("zhaokun", "zhaokun", "39.107.54.132", 22);
+    	FtpUtil ftpUtil = new FtpUtil("root", "liu729754701.", "120.79.251.42", 22);
     	try {
-			ftpUtil.downloadFile("activityArea/", "index.html", "D:/index1.html");
+			ftpUtil.downloadFile("/usr/local/", "test.txt", "D:/text.txt");
+			System.out.println("ok");
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

@@ -22,8 +22,8 @@ public class OssUtil {
 	private static final String BUCKET_NAME = "fsdfsgdfdsdfsfs";
 	
 	/**
-	 * @param file 本地file
-	 * @param uploadPath oss上传路径
+	 * @param file 本地file 如：D:\\Google Download\\test.png
+	 * @param uploadPath oss上传路径 如：myfile3
 	 */
 	public static void upload(File file, String uploadPath) {
 		OSSClient ossClient = null;
@@ -64,7 +64,7 @@ public class OssUtil {
 	
 	/**
 	 * 
-	 * @param filePath oss的存储路径
+	 * @param filePath oss的存储路径 如：myfile3/test.png
 	 * @return
 	 */
 	public static File download(String filePath) {
