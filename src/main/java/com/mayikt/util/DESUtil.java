@@ -76,7 +76,8 @@ public class DESUtil {
         byte[] byteMi = null;  
         byte[] byteMing = null;  
         String strMi = "";  
-        BASE64Encoder base64en = new BASE64Encoder();  
+        @SuppressWarnings("restriction")
+		BASE64Encoder base64en = new BASE64Encoder();  
         try {  
             byteMing = strMing.getBytes("UTF8");  
             byteMi = this.encryptByte(byteMing);  
