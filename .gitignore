@@ -18,7 +18,14 @@ configuration
 
 # maven gitignore#
 target/**
+.mvn/
+mvnw
+mvnw.cmd
 
+# spring files
+.springBeans
+
+# svn files
 .svn/
 
 # intelliJ.gitignore #
@@ -76,7 +83,6 @@ configuration/**
 
 # tcc_coverage
 coverage.ec
-
 
 
 config.client.*
