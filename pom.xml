@@ -86,7 +86,7 @@
 		<dependency>
 			<groupId>joda-time</groupId>
 			<artifactId>joda-time</artifactId>
-			<version>2.3</version><!--$NO-MVN-MAN-VER$-->
+			<version>2.3</version><!--$NO-MVN-MAN-VER$ -->
 		</dependency>
 
 		<!-- sftp -->
@@ -94,6 +94,19 @@
 			<groupId>com.jcraft</groupId>
 			<artifactId>jsch</artifactId>
 			<version>0.1.53</version>
+		</dependency>
+
+		<!-- Gson -->
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+		</dependency>
+
+		<!-- httpClient -->
+		<dependency> 
+			<groupId>commons-httpclient</groupId> 
+			<artifactId>commons-httpclient</artifactId> 
+			<version>3.1</version> 
 		</dependency>
 
 		<dependency>
