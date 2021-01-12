@@ -1,24 +1,24 @@
 package com.mayikt.util;
 
+import com.aliyun.oss.OSSClient;
+import com.aliyun.oss.model.GetObjectRequest;
+import com.aliyun.oss.model.ObjectMetadata;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-import com.aliyun.oss.OSSClient;
-import com.aliyun.oss.model.GetObjectRequest;
-import com.aliyun.oss.model.ObjectMetadata;
-
 public class OssUtil {
 	
-	private static final String ENDPOINT = "http://oss-cn-shenzhen.aliyuncs.com";
+	private static final String ENDPOINT = "***";
 	
 	// 云账号AccessKey有所有API访问权限，建议遵循阿里云安全最佳实践，创建并使用RAM子账号进行API访问或日常运维，请登录
 	// https://ram.console.aliyun.com 创建。https://usercenter.console.aliyun.com/#/manage/ak
-	private static final String ACCESS_KEY_ID = "LTAIR47E7L8UaYZ8";
-	private static final String ACCESS_KEY_SECRET = "aYYXpDiMQeMwKb0X9RdI8qQrsNPdyg";
+	private static final String ACCESS_KEY_ID = "***";
+	private static final String ACCESS_KEY_SECRET = "***";
 	
-	private static final String BUCKET_NAME = "fsdfsgdfdsdfsfs";
+	private static final String BUCKET_NAME = "***";
 	
 	/**
 	 * @param file 本地file 如：D:\\Google Download\\test.png

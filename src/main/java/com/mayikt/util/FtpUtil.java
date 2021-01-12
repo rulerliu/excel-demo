@@ -4,23 +4,11 @@
 
 package com.mayikt.util;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
+import com.jcraft.jsch.*;
+import lombok.extern.slf4j.Slf4j;
+
+import java.io.*;
 import java.util.Properties;
-
-import org.apache.log4j.Logger;
-
-import com.jcraft.jsch.Channel;
-import com.jcraft.jsch.ChannelSftp;
-import com.jcraft.jsch.JSch;
-import com.jcraft.jsch.JSchException;
-import com.jcraft.jsch.Session;
-import com.jcraft.jsch.SftpATTRS;
-import com.jcraft.jsch.SftpException;
 
 /**
  * SFTP工具类
@@ -36,10 +24,9 @@ import com.jcraft.jsch.SftpException;
  *
  */
 
+@Slf4j
 public class FtpUtil {  
-    /**log*/  
-    protected static Logger log = Logger.getLogger(FtpUtil.class);  
-  
+
     public static final String NO_FILE = "No such file";  
   
     private ChannelSftp sftp = null;  

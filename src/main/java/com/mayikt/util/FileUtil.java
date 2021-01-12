@@ -1,31 +1,16 @@
 package com.mayikt.util;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.CharArrayWriter;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.io.UnsupportedEncodingException;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.mayikt.constants.Constants;
+import com.mayikt.exception.ResourceException;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.util.FileCopyUtils;
 import org.yaml.snakeyaml.reader.UnicodeReader;
 
-import com.mayikt.constants.Constants;
-import com.mayikt.exception.ResourceException;
+import java.io.*;
 
 /** 文件工具类 */
+@Slf4j
 public class FileUtil {
-
-	private static Logger log = LoggerFactory.getLogger(FileUtil.class);
 
 	private static File   file;
 
