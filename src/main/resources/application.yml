@@ -7,3 +7,16 @@ spring:
       suffix: .jsp
   application:
     name: service-order
+
+job:
+  baseSleepTimeMilliseconds: 1000
+  maxSleepTimeMilliseconds: 3000
+  sessionTimeoutMilliseconds: 60000
+  connectionTimeoutMilliseconds: 60000
+  maxRetries: 3
+  zkServerList: 127.0.0.1:2181
+  namespace: rtp-core-job
+  job1Shards: 1
+  job1Cron: 0/5 * * * * ?
+  job2Shards: 2
+  job2Cron: 0/10 * * * * ?
