@@ -53,8 +53,10 @@ public class Md5Util {
     public static void main(String args[]) {
         String s = "123456";
         System.out.println("原始：" + s);
-        System.out.println("MD5后：" + md5(s));
-        System.out.println("解密的：" + convertMD5(convertMD5(s)));
+
+        String s1 = md5(s);
+        System.out.println("MD5后：" + s1);
+        System.out.println("解密的：" + convertMD5(convertMD5(s1)));
     }
 
 
