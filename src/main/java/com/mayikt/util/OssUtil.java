@@ -28,8 +28,6 @@ public class OssUtil {
 		OSSClient ossClient = null;
 		InputStream inputStream = null;
 		try {
-//			String accessKeyId = "LTAIPvJ3SQtkk9MT";
-//			String accessKeySecret = "T3hjXWLfFnuhFr8KwIjSGLRRYXlWYR";
 
 			// 创建OSSClient实例。
 			ossClient = new OSSClient(ENDPOINT, ACCESS_KEY_ID, ACCESS_KEY_SECRET);
