@@ -1,5 +1,5 @@
 server:
-  port: 9000
+  port: 8000
 spring:
   mvc:
     view:
@@ -44,5 +44,3 @@ minio:
   accessKey: admin
   secretKey: abc12345
   bucketName: mybucket
-  #存储文件夹
-  folder: myfolder/
