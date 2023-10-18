@@ -23,6 +23,8 @@ job:
 
 logging:
   config: classpath:logback.xml
+
+#xxl-job配置
 xxl:
   job:
     accessToken: ''
@@ -35,3 +37,12 @@ xxl:
       logpath: /Users/liuwq/IdeaProjects/xxl-job/logs/jobhandler
       logretentiondays: 30
       port: 9998
+
+#minio相关配置
+minio:
+  endpoint: http://127.0.0.1:9000
+  accessKey: admin
+  secretKey: abc12345
+  bucketName: mybucket
+  #存储文件夹
+  folder: myfolder/
