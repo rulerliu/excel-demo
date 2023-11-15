@@ -1,26 +1,57 @@
 package com.mayikt.controller;
 
-import java.awt.image.BufferedImage;
-import java.io.BufferedOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
-import java.util.zip.ZipOutputStream;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
+import com.google.zxing.WriterException;
+import com.mayikt.exception.ResourceException;
+import com.mayikt.util.QRCodeUtil;
+import com.mayikt.util.ZipUtil;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.util.StreamUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.google.zxing.WriterException;
-import com.mayikt.util.QRCodeUtil;
-import com.mayikt.util.ZipUtil;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.awt.image.BufferedImage;
+import java.io.*;
+import java.net.URLEncoder;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipOutputStream;
 
 @RestController
 @RequestMapping("/zip")
+@Slf4j
 public class ZipController {
+
+	@RequestMapping(value = "download2")
+	public void getCompressedFileZip(HttpServletRequest request, HttpServletResponse response) {
+		try {
+			response.setContentType("application/zip");
+			response.setHeader("Content-Disposition", "attachment; filename=\"template_packages.zip\"");
+
+			Map<String, Integer> nameCountMap = new HashMap<>();
+
+			ByteArrayOutputStream bufferOutput = new ByteArrayOutputStream();
+			try (ZipOutputStream outputStream = new ZipOutputStream(bufferOutput)) {
+//				for (String fileId : fileIdList) {
+					File file = new File("C:\\Users\\Administrator\\Downloads\\idea相关配置.txt");
+					ZipEntry zipEntry = new ZipEntry(file.getName());
+					outputStream.putNextEntry(zipEntry);
+//					  try (ObjectStatVO objectStatVO = MinioUtil.downloadAttachment(zoneServerConfig, file.getFolderName(), file.getName())) {
+//                        StreamUtils.copy(objectStatVO.getInputStream(), outputStream);
+//                    } catch (Throwable e) {
+//                        log.warn("压缩文件时失败：", e);
+//                    }
+					StreamUtils.copy(new FileInputStream(file), outputStream);
+					outputStream.closeEntry();
+//				}
+			}
+			StreamUtils.copy(bufferOutput.toByteArray(), response.getOutputStream());
+		} catch (IOException e) {
+			throw new ResourceException("生成压缩文件包失败！");
+		}
+	}
 
     @RequestMapping(value = "download")
     public void dowloadQRCode(HttpServletRequest request, HttpServletResponse response, String paEncryptId) throws IOException {
